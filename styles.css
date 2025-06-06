@@ -75,3 +75,56 @@ input:focus {
   transform: scale(1.1);
   box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
 }
+
+.loginBtn {
+    transition: all 0.3s ease;
+}
+
+.loginBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.loginBtn2 {
+    cursor: pointer;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+/* Popup background */
+.popup {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* When popup is shown, add a class like 'show' */
+.popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Popup box */
+.popup-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    position: relative;
+    box-shadow: 0 0 10px black;
+}
