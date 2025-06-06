@@ -3,6 +3,13 @@ const navbar = document.getElementById('navbar');
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
+//login
+const loginPopup = document.getElementById("loginPopup");
+const loginBtn = document.getElementById("loginBtn");
+const loginBtn2 = document.getElementById("loginBtn2");
+const closeBtn = document.querySelector(".close-btn");
+
+
 // 滚动监听
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
@@ -91,4 +98,37 @@ document.addEventListener('DOMContentLoaded', () => {
   // 初始执行和滚动时执行
   animateOnScroll();
   window.addEventListener('scroll', animateOnScroll);
+});
+
+function togglePasswordVisibility(inputId) {
+    const input = document.getElementById(inputId);
+    const svg = input.nextElementSibling.querySelector('svg');
+    const slashLine = svg.querySelector('#slash-line');
+
+    if (input.type === "password") {
+        input.type = "text";
+        slashLine.style.display = "block";
+    } else {
+        input.type = "password";
+        slashLine.style.display = "none";
+    }
+}
+
+//login button
+loginBtn.addEventListener("click", () => {
+    loginPopup.classList.add("show");
+});
+
+loginBtn2.addEventListener("click", () => {
+    loginPopup.classList.add("show");
+});
+
+closeBtn.addEventListener("click", () => {
+    loginPopup.classList.remove("show");
+});
+
+window.addEventListener("click", (e) => {
+    if (e.target === loginPopup) {
+        loginPopup.classList.remove("show");
+    }
 });
